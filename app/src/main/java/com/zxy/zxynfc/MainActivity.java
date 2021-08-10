@@ -51,4 +51,5 @@ public class MainActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         setNFCIntent(intent);
     }
+
 }
