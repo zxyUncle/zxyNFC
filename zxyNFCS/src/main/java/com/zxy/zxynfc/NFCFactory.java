@@ -282,7 +282,7 @@ public class NFCFactory {
         return nTag;
     }
 
-    interface NfcResponseListener {
+    public interface NfcResponseListener {
         public void onResult(NFCMessageBean nfcMessageBean);
     }
 
