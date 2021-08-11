@@ -18,7 +18,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-//https://github.com/nadam/nfc-reader
 public class NFCFactory {
     private NfcAdapter mNfcAdapter;
     private List<Tag> mTags = new ArrayList<>();
@@ -281,7 +280,7 @@ public class NFCFactory {
 
         return nTag;
     }
-
+    //https://github.com/nadam/nfc-reader
     public interface NfcResponseListener {
         public void onResult(NFCMessageBean nfcMessageBean);
     }
