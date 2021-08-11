@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //https://github.com/nadam/nfc-reader
-class NFCFactory {
+public class NFCFactory {
     private NfcAdapter mNfcAdapter;
     private List<Tag> mTags = new ArrayList<>();
     private PendingIntent mPendingIntent;

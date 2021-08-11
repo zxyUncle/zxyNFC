@@ -3,7 +3,7 @@ package com.zxy.zxynfc;
 
 import java.util.Arrays;
 
-class NFCMessageBean {
+public class NFCMessageBean {
     private byte[] id;
     private String id_hex;
     private String id_reversed_hex;
