@@ -14,6 +14,18 @@ public class NFCMessageBean {
     private int sectors;
     private int blocks;
 
+    public void clear(){
+        id = null;
+        id_hex = null;
+        id_reversed_hex = null;
+        id_dec = null;
+        id_reversed_dec = null;
+        type = null;
+        size = 0;
+        sectors = 0;
+        blocks = 0;
+    }
+
     public byte[] getId() {
         return id;
     }

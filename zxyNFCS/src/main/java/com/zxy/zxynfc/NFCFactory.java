@@ -108,6 +108,7 @@ public class NFCFactory {
     }
 
     public void setIntent(Intent intent, Activity mContext,NfcResponseListener nfcResponseListener) {
+        nfcMessageBean.clear();
         this.nfcResponseListener = nfcResponseListener;
         this.mContext = mContext;
         if (mNfcAdapter == null) {
