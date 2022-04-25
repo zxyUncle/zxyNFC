@@ -25,16 +25,8 @@ public class NFCFactory {
     private Activity mContext;
     private NFCMessageBean nfcMessageBean = new NFCMessageBean();
 
-    //zxy java单例模式模板，静态内部类
-    private NFCFactory() {
-    }
-
     public static NFCFactory getInstance() {
-        return SingleInnerHolder.instance;
-    }
-
-    private static class SingleInnerHolder {
-        private static NFCFactory instance = new NFCFactory();
+        return new NFCFactory();
     }
 
     private NfcResponseListener nfcResponseListener;

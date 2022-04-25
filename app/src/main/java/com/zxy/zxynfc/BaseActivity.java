@@ -7,10 +7,11 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 public class BaseActivity extends Activity {
-
+    NFCFactory factory;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        factory = new NFCFactory();
         setNFCIntent(getIntent());
     }
 
@@ -20,7 +21,7 @@ public class BaseActivity extends Activity {
      * @param intent
      */
     private void setNFCIntent(Intent intent) {
-        NFCFactory.getInstance().setIntent(intent, this, nfcMessageBean -> {
+        factory.setIntent(intent, this, nfcMessageBean -> {
             if (nfcMessageBean.getId_dec() != null)
                 onScanNFC(nfcMessageBean);
         });
@@ -29,13 +30,13 @@ public class BaseActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        NFCFactory.getInstance().onPause();
+        factory.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        NFCFactory.getInstance().onResume();
+        factory.onResume();
     }
 
     @Override
