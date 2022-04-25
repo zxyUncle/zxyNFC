@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 /**
  * Created by zsf on 2021/8/10 10:43
@@ -12,7 +14,7 @@ import android.widget.TextView;
  * * NFC 刷卡
  * ******************************************
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private TextView tvNFC;
 
     @Override
@@ -20,36 +22,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvNFC = findViewById(R.id.tvNFC);
-        setNFCIntent(getIntent());
-    }
-
-    /**
-     * 设置NFC
-     * @param intent
-     */
-    private void setNFCIntent(Intent intent) {
-        NFCFactory.getInstance().setIntent(intent, this, nfcMessageBean -> {
-            Log.e("zxy", nfcMessageBean.toString());
-            tvNFC.setText(nfcMessageBean.toString());
+        Button tvIntent = findViewById(R.id.tvIntent);
+        tvIntent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,FirstActivity.class);
+                startActivity(intent);
+            }
         });
+
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        NFCFactory.getInstance().onPause();
+    protected void onScanNFC(NFCMessageBean nfcMessageBean) {
+        super.onScanNFC(nfcMessageBean);
+        tvNFC.setText(nfcMessageBean.toString());
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        NFCFactory.getInstance().onResume();
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        setNFCIntent(intent);
-    }
-
 }

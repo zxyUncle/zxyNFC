@@ -111,11 +111,11 @@ public class NFCFactory {
         nfcMessageBean.clear();
         this.nfcResponseListener = nfcResponseListener;
         this.mContext = mContext;
-        if (mNfcAdapter == null) {
+//        if (mNfcAdapter == null) {
             Log.e("zxy", "初始化:mNfcAdapter");
             mNfcAdapter = NfcAdapter.getDefaultAdapter(mContext);//设备的NfcAdapter对象
             mPendingIntent = PendingIntent.getActivity(mContext, 0, new Intent(mContext, mContext.getClass()), 0);//创建PendingIntent对象,当检测到一个Tag标签就会执行此Intent
-        }
+//        }
         if (mNfcAdapter == null) {//判断设备是否支持NFC功能
             Toast.makeText(mContext, "设备不支持NFC功能!", Toast.LENGTH_SHORT);
             return;
