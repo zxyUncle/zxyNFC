@@ -104,7 +104,7 @@ public class NFCFactory {
         this.nfcResponseListener = nfcResponseListener;
         this.mContext = mContext;
 //        if (mNfcAdapter == null) {
-            Log.e("zxy", "初始化:mNfcAdapter");
+//            Log.e("zxy", "初始化:mNfcAdapter");
             mNfcAdapter = NfcAdapter.getDefaultAdapter(mContext);//设备的NfcAdapter对象
             mPendingIntent = PendingIntent.getActivity(mContext, 0, new Intent(mContext, mContext.getClass()), 0);//创建PendingIntent对象,当检测到一个Tag标签就会执行此Intent
 //        }
