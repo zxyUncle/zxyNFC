@@ -14,7 +14,7 @@ Step 1
 		}
 	}
 	dependencies {
-	 implementation 'com.github.zxyUncle:zxyNFC:1.0.0'
+	 implementation 'com.github.zxyUncle:zxyNFC:1.0.8'
 	}
 
 [使用方式：掘金文档点这里][1]
