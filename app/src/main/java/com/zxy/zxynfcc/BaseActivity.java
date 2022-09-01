@@ -1,10 +1,13 @@
-package com.zxy.zxynfc;
+package com.zxy.zxynfcc;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+
+import com.zxy.zxynfc.NFCFactory;
+import com.zxy.zxynfc.NFCMessageBean;
 
 public class BaseActivity extends Activity {
     NFCFactory factory;

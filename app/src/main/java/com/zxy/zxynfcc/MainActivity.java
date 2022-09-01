@@ -1,13 +1,15 @@
-package com.zxy.zxynfc;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.zxy.zxynfcc;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.zxy.zxynfc.NFCMessageBean;
+import com.zxy.zxynfcc.BaseActivity;
+import com.zxy.zxynfcc.FirstActivity;
+
 /**
  * Created by zsf on 2021/8/10 10:43
  * ******************************************
@@ -27,7 +29,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this,FirstActivity.class);
+                intent.setClass(MainActivity.this, FirstActivity.class);
                 startActivity(intent);
             }
         });

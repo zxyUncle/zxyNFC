@@ -1,11 +1,9 @@
-package com.zxy.zxynfc;
+package com.zxy.zxynfcc;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
+
+import com.zxy.zxynfc.NFCMessageBean;
 
 public class FirstActivity extends BaseActivity {
     private TextView tvNFC;
